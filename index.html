@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VerseVistas | Nature & Lyrics Hub</title>
+    <style>
+        :root {
+            --primary: #0a140d;
+            --accent: #d4af37;
+            --forest: #1b3022;
+            --glass: rgba(255, 255, 255, 0.05);
+            --text: #f9fbf9;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', -apple-system, sans-serif; }
+
+        body {
+            background-color: var(--primary);
+            color: var(--text);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* 3D Animated Background */
+        .bg-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(circle at 50% 50%, #162b1d 0%, #0a140d 100%);
+        }
+
+        .orb {
+            position: absolute;
+            width: 60vw;
+            height: 60vw;
+            background: var(--accent);
+            filter: blur(150px);
+            opacity: 0.1;
+            border-radius: 50%;
+            animation: float 20s infinite alternate ease-in-out;
+        }
+
+        @keyframes float {
+            0% { transform: translate(-10%, -10%) rotate(0deg); }
+            100% { transform: translate(20%, 20%) rotate(360deg); }
+        }
+
+        /* Top Trend Panel */
+        .trend-reveal {
+            background: linear-gradient(90deg, var(--forest), #2c4c36);
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 2px solid var(--accent);
+            animation: slideIn 1s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--primary);
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 800;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 25px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo { font-size: 1.5rem; font-weight: 900; letter-spacing: 2px; color: var(--accent); }
+
+        /* Content Sections */
+        .container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
+
+        .hero { text-align: center; padding: 100px 20px; }
+        .hero h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); line-height: 1; margin-bottom: 20px; }
+
+        /* Grid System */
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .media-card {
+            background: var(--glass);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 15px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .media-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: var(--accent);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .placeholder {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: #152219;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255,255,255,0.2);
+            font-style: italic;
+        }
+
+        /* UI Elements */
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--primary);
+            padding: 16px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: 0.3s;
+            margin-top: 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover { transform: scale(1.05); filter: brightness(1.1); }
+
+        .contact-box {
+            background: var(--glass);
+            padding: 50px;
+            border-radius: 30px;
+            margin-top: 100px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 18px;
+            margin: 10px 0;
+            background: rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            color: white;
+            font-size: 16px;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .hero { padding: 60px 10px; }
+            .contact-box { padding: 30px; }
+            nav { flex-direction: column; gap: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-canvas">
+        <div class="orb"></div>
+    </div>
+
+    <section class="trend-reveal">
+        <span class="badge">Trending Now</span>
+        <h2 style="font-size: 1.8rem;">THE PART 1: CINEMATIC ASSETS</h2>
+        <p style="opacity: 0.8; margin-top: 5px;">Download raw nature views and lyric overlays.</p>
+        <a href="#" class="btn" style="padding: 10px 25px; font-size: 14px;">Access Material</a>
+    </section>
+
+    <nav>
+        <div class="logo">VERSEVISTAS</div>
+        <div style="display: flex; gap: 20px;">
+            <a href="#projects" style="color:white; text-decoration:none; font-weight:600;">Series</a>
+            <a href="#contact" style="color:white; text-decoration:none; font-weight:600;">Contact</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>Verse <span style="color:var(--accent)">Vistas</span></h1>
+        <p style="font-size: 1.2rem; opacity: 0.7; max-width: 600px; margin: 20px auto;">
+            The intersection of cinematic nature photography and soul-stirring musical verses.
+        </p>
+    </header>
+
+    <main class="container" id="projects">
+        <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+            <h2>Recent Content</h2>
+            <a href="#" style="color:var(--accent); text-decoration:none;">View All</a>
+        </div>
+
+        <div class="media-grid">
+            <div class="media-card">
+                <div class="placeholder">Latest Reel Preview</div>
+                <h3 style="margin-top: 15px;">The Part: Series 01</h3>
+                <p style="opacity: 0.6; font-size: 0.9rem;">Mountain Echoes & Lo-fi Verses</p>
+            </div>
+            <div class="media-card">
+                <div class="placeholder">Nature Photography</div>
+                <h3 style="margin-top: 15px;">Golden Hour Vault</h3>
+                <p style="opacity: 0.6; font-size: 0.9rem;">High-Res Wallpapers (4K)</p>
+            </div>
+            <div class="media-card">
+                <div class="placeholder">Community Resource</div>
+                <h3 style="margin-top: 15px;">Lyric Templates</h3>
+                <p style="opacity: 0.6; font-size: 0.9rem;">Custom Fonts & Layouts</p>
+            </div>
+        </div>
+
+        <section id="contact" class="contact-box">
+            <div style="text-align: center; margin-bottom: 30px;">
+                <h2 style="font-size: 2rem;">Brand Collaboration</h2>
+                <p style="opacity: 0.7;">For sponsorships, projects, and custom lyric videos.</p>
+            </div>
+            <form>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                    <input type="text" placeholder="Full Name">
+                    <input type="email" placeholder="Email Address">
+                </div>
+                <input type="text" placeholder="Subject">
+                <textarea placeholder="Tell us about your brand vision..."></textarea>
+                <button type="submit" class="btn" style="width: 100%;">Send Inquiry</button>
+            </form>
+        </section>
+    </main>
+
+    <footer style="padding: 60px 20px; text-align: center; opacity: 0.5; font-size: 0.9rem;">
+        <p>&copy; 2026 VERSEVISTAS.IN | CURATED BY NATURE, DRIVEN BY MUSIC.</p>
+    </footer>
+
+</body>
+</html>
